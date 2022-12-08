@@ -12,7 +12,7 @@ class ViewController: UIViewController {
     
     
     
-    
+    // test
     
     var weather: CurrentWeatherModel!
     var firstScreenViewModel = FirstScreenViewModel()

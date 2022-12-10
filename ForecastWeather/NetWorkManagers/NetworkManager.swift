@@ -60,5 +60,34 @@ class NetworkManager{
         
     }
     
+    func new(latitude: Double, longitude: Double, complitionHandler: @escaping ([CurrentWeatherModel])->Void){
+//        let parameters: [String: Any] = [
+//            "lat": latitude,
+//            "lon": longitude,
+//            "appid": apiKey
+//        ]
+    
+        var arraySearch: [CurrentWeatherModel] = []
+        let request = AF.request("https://api.openweathermap.org/data/2.5/weather?lat=\(latitude)&lon=\(longitude)&appid=\(apiKey)&units=metric", method: .get)
+        request.responseDecodable(of: CurrentWeatherModel.self) { response in
+            
+            do{
+                let requestModel = try response.result.get()
+                arraySearch.append(requestModel)
+                complitionHandler(arraySearch)
+                //print(requestModel)
+            } catch{
+                print("error!!!!!!!!!!!!!!!!! \(error)")
+            }
+        }
+        
+        
+    }
+    
+    
+    
+    
+    
+    
     
 }

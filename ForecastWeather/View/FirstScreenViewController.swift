@@ -7,7 +7,7 @@
 
 import UIKit
 
-class ViewController: UIViewController {
+class FirstScreenViewController: UIViewController {
  
     
     
@@ -59,11 +59,11 @@ class ViewController: UIViewController {
     private func createCompositionalLayout() -> UICollectionViewLayout {
         let itemSize = NSCollectionLayoutSize(
             widthDimension: .fractionalWidth(1.0),
-            heightDimension: .fractionalHeight(1.0))
+            heightDimension: .fractionalHeight(0.4))
         let item = NSCollectionLayoutItem(layoutSize: itemSize)
         item.contentInsets = .init(top: 0, leading: 0, bottom: 0, trailing: 0)
         
-        let groupSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(1), heightDimension: .absolute(150))
+        let groupSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(1), heightDimension: .fractionalHeight(1/7))
         let group = NSCollectionLayoutGroup.horizontal(layoutSize: groupSize, subitems: [item])
         
         let section = NSCollectionLayoutSection(group: group)
@@ -95,26 +95,32 @@ class ViewController: UIViewController {
 
 }
 
-extension ViewController: UISearchResultsUpdating{
+extension FirstScreenViewController: UISearchResultsUpdating{
     func updateSearchResults(for searchController: UISearchController) {
         
          guard let text = searchController.searchBar.text else {return}
         if text.isEmpty{
-           // self.arrayWeather.removeAll()
-            self.collectionSearch.reloadData()
+          self.arraySearch.removeAll()
+          self.collectionSearch.reloadData()
         }
-//
-//        if text.count > 1{
-//            searchViewModel.searchWeather(city: text.trimmingCharacters(in: .whitespaces)){ data in
-//                self.weather = data
-//                print(data)
-//            }
-//        }
+
+        searchController.showsSearchResultsController =  true
+    
+        searchViewModel.searchWeather(city: text.trimmingCharacters(in: .whitespaces)){ data in
+                self.arraySearch = data
+                DispatchQueue.main.async {
+                    self.collectionSearch.reloadData()
+
+                }
+            }
+        
+
+        
        
     }
   
 }
-extension ViewController: UICollectionViewDataSource, UICollectionViewDelegate{
+extension FirstScreenViewController: UICollectionViewDataSource, UICollectionViewDelegate{
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         switch self.search.isActive{
@@ -137,12 +143,19 @@ extension ViewController: UICollectionViewDataSource, UICollectionViewDelegate{
         
     }
     
-//    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
 //        var weather: CurrentWeatherModel!
 //        switch self.search.isActive{
 //        case true: weather = self.arraySearch[indexPath.row]
 //        case false: weather = self.arrayWeather[indexPath.row]
 //        }
-//    }
+//
+//        //let vc = SecondScreenViewController()
+//        //self.navigationController?.pushViewController(vc, animated: true)
+//        let storyboard = UIStoryboard(name: "Main", bundle: nil)
+//        let vc = storyboard.instantiateViewController(identifier: "secondNav")
+//        self.navigationController?.pushViewController(vc, animated: true)
+        
+    }
 
 }

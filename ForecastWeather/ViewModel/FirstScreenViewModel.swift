@@ -14,10 +14,8 @@ class FirstScreenViewModel{
         var arrayForComplition: [CurrentWeatherModel] = []
         
         for city in arrayCities {
-            let new = city.replacingOccurrences(of: " ", with: "_")
-            searchViewModel.searchWeather(city: new) { [weak self] currentWeather in
+            searchViewModel.weatherForSpecialСities(city: city) { [weak self] currentWeather in
                 guard self != nil else {return}
-                //print(currentWeather.name)
                 arrayForComplition.append(currentWeather)
                 complition(arrayForComplition)
                 
@@ -26,15 +24,7 @@ class FirstScreenViewModel{
         }
     }
     
-//    func TEst(_ complition: @escaping ([CurrentWeatherModel]?)->()){
-//        var arrayForComplition: [CurrentWeatherModel]?
-//        
-//        searchViewModel.searchWeather(city: "Santa_Cruz_de_la_Sierra") { data in
-//            arrayForComplition?.append(data)
-//        }
-//        
-//        complition(arrayForComplition)
-//    }
+
     
     
     

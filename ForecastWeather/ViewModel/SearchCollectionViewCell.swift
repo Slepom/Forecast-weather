@@ -1,9 +1,3 @@
-//
-//  SearchCollectionViewCell.swift
-//  ForecastWeather
-//
-//  Created by Полина Жарова on 8.12.22.
-//
 
 import UIKit
 import SDWebImage
@@ -11,6 +5,7 @@ import SDWebImage
 class SearchCollectionViewCell: UICollectionViewCell {
     
     static var reuseId = "SearchCell"
+    
     let imageView : UIImageView = {
         let imageView = UIImageView()
         imageView.translatesAutoresizingMaskIntoConstraints = false
@@ -23,8 +18,8 @@ class SearchCollectionViewCell: UICollectionViewCell {
         label.translatesAutoresizingMaskIntoConstraints = false
         label.numberOfLines = 0
         label.textAlignment = .left
-        label.textColor = .green
-        label.font = UIFont.systemFont(ofSize: 14, weight: .heavy)
+        label.textColor = .white
+        label.font = UIFont.systemFont(ofSize: 24, weight: .regular)
         return label
     }()
     let temperatureLabel: UILabel = {
@@ -33,20 +28,12 @@ class SearchCollectionViewCell: UICollectionViewCell {
         label.numberOfLines = 0
         label.textAlignment = .left
         label.textColor = .white
-        label.font = UIFont.systemFont(ofSize: 16, weight: .regular)
+        label.font = UIFont.systemFont(ofSize: 26, weight: .regular)
         return label
     }()
     
     
-    let subtitle: UILabel = {
-        let label = UILabel()
-        label.translatesAutoresizingMaskIntoConstraints = false
-        label.numberOfLines = 1
-        label.textAlignment = .left
-        label.textColor = .white
-        label.font = UIFont.systemFont(ofSize: 12, weight: .thin)
-        return label
-    }()
+
     let timeLabel: UILabel = {
         let label = UILabel()
         label.translatesAutoresizingMaskIntoConstraints = false
@@ -60,37 +47,34 @@ class SearchCollectionViewCell: UICollectionViewCell {
     override init(frame: CGRect) {
         super.init(frame: frame)
         setupConstraints()
-
         
     }
     private func setupConstraints() {
         contentView.addSubview(imageView)
         contentView.addSubview(temperatureLabel)
-        contentView.addSubview(subtitle)
         contentView.addSubview(timeLabel)
         contentView.addSubview(cityLabel)
         
         NSLayoutConstraint.activate([
-            imageView.leftAnchor.constraint(equalTo: contentView.leftAnchor, constant: 8),
+
+            timeLabel.leftAnchor.constraint(equalTo: contentView.leftAnchor, constant: 8),
+            timeLabel.widthAnchor.constraint(equalTo: contentView.widthAnchor, multiplier: 0.1),
+            timeLabel.heightAnchor.constraint(equalTo: timeLabel.widthAnchor, multiplier: 1),
+            timeLabel.bottomAnchor.constraint(equalTo: cityLabel.topAnchor, constant: 10),
+            
+            cityLabel.leftAnchor.constraint(equalTo: contentView.leftAnchor, constant: 8),
+            cityLabel.topAnchor.constraint(equalTo: imageView.centerYAnchor),
+            cityLabel.rightAnchor.constraint(equalTo: imageView.leftAnchor, constant: -8),
+            
+            imageView.leftAnchor.constraint(equalTo: contentView.centerXAnchor),
             imageView.widthAnchor.constraint(equalTo: contentView.widthAnchor, multiplier: 0.2),
-            imageView.topAnchor.constraint(equalTo: contentView.topAnchor, constant: 8),
-            imageView.heightAnchor.constraint(equalTo: imageView.widthAnchor, multiplier: 1.5),
+            imageView.topAnchor.constraint(equalTo: contentView.safeAreaLayoutGuide.topAnchor, constant: 2),
+            imageView.heightAnchor.constraint(equalTo: contentView.heightAnchor, multiplier: 2),
             
-            temperatureLabel.leftAnchor.constraint(equalTo: imageView.rightAnchor, constant: 8),
-            temperatureLabel.rightAnchor.constraint(equalTo: cityLabel.leftAnchor, constant: -8),
-            temperatureLabel.topAnchor.constraint(equalTo: contentView.safeAreaLayoutGuide.topAnchor, constant: 8),
-            
-            cityLabel.leftAnchor.constraint(equalTo: temperatureLabel.rightAnchor, constant: 4),
-            cityLabel.rightAnchor.constraint(equalTo: contentView.rightAnchor, constant: -16),
-            cityLabel.topAnchor.constraint(equalTo: contentView.safeAreaLayoutGuide.topAnchor, constant: 8),
-            
-            subtitle.leftAnchor.constraint(equalTo: imageView.rightAnchor, constant: 8),
-            subtitle.rightAnchor.constraint(equalTo: contentView.rightAnchor, constant: -8),
-            subtitle.topAnchor.constraint(equalTo: temperatureLabel.bottomAnchor, constant: 8),
-            
-            timeLabel.leftAnchor.constraint(equalTo: imageView.rightAnchor, constant: 8),
-            timeLabel.rightAnchor.constraint(equalTo: contentView.rightAnchor, constant: -8),
-            timeLabel.topAnchor.constraint(equalTo: subtitle.bottomAnchor, constant: 8)
+            temperatureLabel.rightAnchor.constraint(equalTo: contentView.rightAnchor, constant: -8),
+            temperatureLabel.leftAnchor.constraint(equalTo: imageView.rightAnchor, constant: 48),
+            temperatureLabel.topAnchor.constraint(equalTo: imageView.centerYAnchor)
+        
         ])
     }
 
@@ -112,7 +96,7 @@ class SearchCollectionViewCell: UICollectionViewCell {
     func configure(with weather: CurrentWeatherModel){
         
         cityLabel.text = weather.name
-        temperatureLabel.text = String(Int(weather.main?.temp ?? 0.0)) + "\u{2103}"
+        temperatureLabel.text = String(Int(weather.main?.temp ?? 0.0)) + "°"
         timeLabel.text = localTime(region: weather.timezone)
         
         //imageView.image = UIImage(named: weather.weather?.first?.icon ?? " ")

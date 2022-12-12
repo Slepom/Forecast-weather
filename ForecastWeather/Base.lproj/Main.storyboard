@@ -32,17 +32,11 @@
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="kxP-3T-NlC" customClass="TableView" customModule="ForecastWeather" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="103" width="393" height="715"/>
-                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                                <view key="tableHeaderView" contentMode="scaleToFill" id="zX7-wc-esc">
-                                    <rect key="frame" x="0.0" y="0.0" width="393" height="200"/>
-                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                    <color key="backgroundColor" systemColor="systemGreenColor"/>
-                                </view>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" estimatedSectionHeaderHeight="-1" sectionFooterHeight="28" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="kxP-3T-NlC" customClass="TableView" customModule="ForecastWeather" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="227" width="393" height="625"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="cell" id="UVf-Ji-udy">
-                                        <rect key="frame" x="0.0" y="250" width="393" height="43.666667938232422"/>
+                                        <rect key="frame" x="0.0" y="50" width="393" height="43.666667938232422"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="UVf-Ji-udy" id="NCB-Fa-p4I">
                                             <rect key="frame" x="0.0" y="0.0" width="393" height="43.666667938232422"/>
@@ -51,22 +45,27 @@
                                     </tableViewCell>
                                 </prototypes>
                             </tableView>
+                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="rYD-4R-Me5">
+                                <rect key="frame" x="0.0" y="0.0" width="393" height="229"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" systemColor="systemGreenColor"/>
+                            </view>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="5JJ-k1-S1z"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
                             <constraint firstItem="5JJ-k1-S1z" firstAttribute="trailing" secondItem="kxP-3T-NlC" secondAttribute="trailing" id="B3Q-4Q-bgo"/>
                             <constraint firstItem="kxP-3T-NlC" firstAttribute="leading" secondItem="5JJ-k1-S1z" secondAttribute="leading" id="Ldi-xe-h4X"/>
-                            <constraint firstItem="kxP-3T-NlC" firstAttribute="top" secondItem="5JJ-k1-S1z" secondAttribute="top" id="O9d-hW-xyX"/>
-                            <constraint firstItem="kxP-3T-NlC" firstAttribute="top" secondItem="5JJ-k1-S1z" secondAttribute="top" id="XfF-9W-dkv"/>
-                            <constraint firstItem="5JJ-k1-S1z" firstAttribute="bottom" secondItem="kxP-3T-NlC" secondAttribute="bottom" id="ZqY-Dn-Ire"/>
-                            <constraint firstItem="kxP-3T-NlC" firstAttribute="top" secondItem="5JJ-k1-S1z" secondAttribute="top" id="oEi-Yg-oWM"/>
+                            <constraint firstItem="kxP-3T-NlC" firstAttribute="top" secondItem="5JJ-k1-S1z" secondAttribute="top" constant="124" id="O9d-hW-xyX"/>
+                            <constraint firstItem="kxP-3T-NlC" firstAttribute="top" secondItem="5JJ-k1-S1z" secondAttribute="top" constant="124" id="XfF-9W-dkv"/>
+                            <constraint firstItem="5JJ-k1-S1z" firstAttribute="bottom" secondItem="kxP-3T-NlC" secondAttribute="bottom" constant="-34" id="ZqY-Dn-Ire"/>
+                            <constraint firstItem="kxP-3T-NlC" firstAttribute="top" secondItem="5JJ-k1-S1z" secondAttribute="top" constant="124" id="oEi-Yg-oWM"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="zRt-tj-JvO"/>
                     <connections>
                         <outlet property="tableView" destination="kxP-3T-NlC" id="i10-yB-87d"/>
-                        <outlet property="tableViewHeader" destination="zX7-wc-esc" id="9Ly-5Z-mL5"/>
+                        <outlet property="viewHeader" destination="rYD-4R-Me5" id="d2j-ep-Me3"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="NKt-3c-RhY" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -94,7 +93,6 @@
         <!--Se-->
         <scene sceneID="KGC-vi-dtE">
             <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="zrC-G4-DRo" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
                 <navigationController storyboardIdentifier="secondNav" automaticallyAdjustsScrollViewInsets="NO" id="Y6d-tQ-KNn" customClass="se" sceneMemberID="viewController">
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="VFT-Sb-gro">
@@ -106,6 +104,7 @@
                         <segue destination="vsV-cr-qYD" kind="relationship" relationship="rootViewController" id="4sa-ky-zG9"/>
                     </connections>
                 </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="zrC-G4-DRo" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="2623.6641221374043" y="3.5211267605633805"/>
         </scene>

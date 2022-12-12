@@ -9,8 +9,9 @@ import UIKit
 
 class SecondScreenViewController: UIViewController {
 
-    
-    
+    @IBOutlet weak var viewHeader: UIView!
+    var offsetY: CGFloat! = 200.0
+    var header = UIView()
     
     @IBOutlet weak var tableViewHeader: UIView!
     
@@ -21,22 +22,30 @@ class SecondScreenViewController: UIViewController {
                 }
     }
     
-    let data = [["apples", "oranges", "grape"], ["fruit", "kivi"],["tomato"], ["fruit", "kivi"],["tomato"], ["fruit", "kivi"],["tomato"], ["fruit", "kivi"],["tomato"], ["fruit", "kivi"],["tomato"]]
+    let data = [["apples", "oranges", "grape"], ["fruit", "kivi"],["tomato"], ["fruit", "kivi"],["tomato"], ["fruit", "kivi"],["tomato"], ["fruit", "kivi"],["tomato"], ["fruit", "kivi"],["tomato"], ["apples", "oranges", "grape"], ["fruit", "kivi"],["tomato"], ["fruit", "kivi"],["tomato"], ["fruit", "kivi"],["tomato"], ["fruit", "kivi"],["tomato"], ["fruit", "kivi"],["tomato"]]
     
     override func viewDidLoad() {
         super.viewDidLoad()
+
         
-        //let header = UIView(frame: CGRect(x: 0, y: 0, width: view.frame.size.width, height: 300))
 //        //let footer = UIView(frame: CGRect(x: 0, y: 0, width: view.frame.size.width, height: 300))
-//        header.backgroundColor = .orange
+       
 //        //footer.backgroundColor = .green
-        //tableView.tableHeaderView = header
+        
         //tableView.tableFooterView = footer
-      
+//        tableView.rowHeight = UITableView.automaticDimension
+//        tableView.sectionHeaderHeight = UITableView.automaticDimension
+//        //header.rowHeight = UITableView.automaticDimension
+//        header = UIView(frame: CGRect(x: 0, y: 0, width: view.frame.size.width, height: 300))
+//        header.backgroundColor = .orange
+//        tableView.tableHeaderView = header
         
        
     }
-    
+//    override func viewWillAppear(_ animated: Bool) {
+//        super.viewWillAppear(animated)
+//
+//    }
 
  
 
@@ -49,14 +58,40 @@ extension SecondScreenViewController: UITableViewDelegate{
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: true)
     }
+//    func scrollViewDidScroll(_ scrollView: UIScrollView) {
+//        print("check \(scrollView.contentOffset.y)")
+//        print(tableView.sectionHeaderHeight)
+//        if scrollView.contentOffset.y >= 210{
+//            self.header.frame.size.height = 100
+//        } else {
+//            return
+//        }
     func scrollViewDidScroll(_ scrollView: UIScrollView) {
-        print("check \(scrollView.contentOffset.y)")
-        print(tableView.sectionHeaderHeight)
-        tableView.sectionHeaderHeight = 100.0 + scrollView.contentOffset.y
-        ///self.tableViewHeader.bounds.height = self.tableViewHeader.bounds.height - scrollView.contentOffset.y
+        print(scrollView.contentOffset.y)
+        if scrollView.contentOffset.y > 200{
+            
+        }
+        
+//            if (scrollView.contentOffset.y > self.offsetY) {
+//                self.tableView.tableHeaderView = nil
+//            } else {
+//                self.tableView.tableHeaderView = self.header
+//            }
+//            self.offsetY = scrollView.contentOffset.y
+        }
+//        if scrollView.contentOffset.y < 0{
+//                    self.header.frame.origin.y = scrollView.contentOffset.y
+//                    self.header.frame.size.height -= scrollView.contentOffset.y
+//                }else{
+//                    self.header.frame.size.height =   self.header.frame.size.height -  scrollView.contentOffset.y
+//                    print(self.header.frame.size.height)
+//                }
         
     }
-}
+    func tableView(_ tableView: UITableView, estimatedHeightForHeaderInSection section: Int) -> CGFloat {
+        return 80
+    }
+
 
 
 

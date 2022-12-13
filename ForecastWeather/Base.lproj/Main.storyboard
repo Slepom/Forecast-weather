@@ -33,7 +33,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" estimatedSectionHeaderHeight="-1" sectionFooterHeight="28" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="kxP-3T-NlC" customClass="TableView" customModule="ForecastWeather" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="227" width="393" height="625"/>
+                                <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="cell" id="UVf-Ji-udy">
                                         <rect key="frame" x="0.0" y="50" width="393" height="43.666667938232422"/>
@@ -45,25 +45,29 @@
                                     </tableViewCell>
                                 </prototypes>
                             </tableView>
-                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="rYD-4R-Me5">
-                                <rect key="frame" x="0.0" y="0.0" width="393" height="229"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="rYD-4R-Me5">
+                                <rect key="frame" x="0.0" y="0.0" width="393" height="400"/>
                                 <color key="backgroundColor" systemColor="systemGreenColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="400" id="QU9-n3-cWg"/>
+                                </constraints>
                             </view>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="5JJ-k1-S1z"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
-                            <constraint firstItem="5JJ-k1-S1z" firstAttribute="trailing" secondItem="kxP-3T-NlC" secondAttribute="trailing" id="B3Q-4Q-bgo"/>
-                            <constraint firstItem="kxP-3T-NlC" firstAttribute="leading" secondItem="5JJ-k1-S1z" secondAttribute="leading" id="Ldi-xe-h4X"/>
-                            <constraint firstItem="kxP-3T-NlC" firstAttribute="top" secondItem="5JJ-k1-S1z" secondAttribute="top" constant="124" id="O9d-hW-xyX"/>
-                            <constraint firstItem="kxP-3T-NlC" firstAttribute="top" secondItem="5JJ-k1-S1z" secondAttribute="top" constant="124" id="XfF-9W-dkv"/>
-                            <constraint firstItem="5JJ-k1-S1z" firstAttribute="bottom" secondItem="kxP-3T-NlC" secondAttribute="bottom" constant="-34" id="ZqY-Dn-Ire"/>
-                            <constraint firstItem="kxP-3T-NlC" firstAttribute="top" secondItem="5JJ-k1-S1z" secondAttribute="top" constant="124" id="oEi-Yg-oWM"/>
+                            <constraint firstItem="rYD-4R-Me5" firstAttribute="leading" secondItem="5JJ-k1-S1z" secondAttribute="leading" id="4SG-oL-Oy1"/>
+                            <constraint firstItem="kxP-3T-NlC" firstAttribute="trailing" secondItem="5JJ-k1-S1z" secondAttribute="trailing" id="8Ud-NC-kyg"/>
+                            <constraint firstItem="rYD-4R-Me5" firstAttribute="trailing" secondItem="5JJ-k1-S1z" secondAttribute="trailing" id="LHw-y1-SkW"/>
+                            <constraint firstAttribute="bottom" secondItem="kxP-3T-NlC" secondAttribute="bottom" id="QFg-aj-9LF"/>
+                            <constraint firstItem="rYD-4R-Me5" firstAttribute="top" secondItem="RBI-vp-pbF" secondAttribute="top" id="eHk-IA-mLa"/>
+                            <constraint firstItem="kxP-3T-NlC" firstAttribute="top" secondItem="rYD-4R-Me5" secondAttribute="top" id="jXL-ZN-0id"/>
+                            <constraint firstItem="kxP-3T-NlC" firstAttribute="leading" secondItem="5JJ-k1-S1z" secondAttribute="leading" id="viO-Z9-E9s"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="zRt-tj-JvO"/>
                     <connections>
+                        <outlet property="heightView" destination="QU9-n3-cWg" id="qwc-0k-axc"/>
                         <outlet property="tableView" destination="kxP-3T-NlC" id="i10-yB-87d"/>
                         <outlet property="viewHeader" destination="rYD-4R-Me5" id="d2j-ep-Me3"/>
                     </connections>

@@ -9,6 +9,8 @@ import UIKit
 
 class SecondScreenViewController: UIViewController {
 
+    @IBOutlet weak var heightView: NSLayoutConstraint!
+    
     @IBOutlet weak var viewHeader: UIView!
     var offsetY: CGFloat! = 200.0
     var header = UIView()
@@ -47,7 +49,11 @@ class SecondScreenViewController: UIViewController {
 //
 //    }
 
- 
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        self.navigationController?.setNavigationBarHidden(true, animated: false)
+                
+    }
 
 }
 
@@ -57,21 +63,42 @@ extension SecondScreenViewController: UITableViewDelegate{
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: true)
-    }
-//    func scrollViewDidScroll(_ scrollView: UIScrollView) {
-//        print("check \(scrollView.contentOffset.y)")
-//        print(tableView.sectionHeaderHeight)
-//        if scrollView.contentOffset.y >= 210{
-//            self.header.frame.size.height = 100
-//        } else {
-//            return
-//        }
-    func scrollViewDidScroll(_ scrollView: UIScrollView) {
-        print(scrollView.contentOffset.y)
-        if scrollView.contentOffset.y > 200{
-            
-        }
         
+        
+        
+        
+    }
+    func scrollViewDidScroll(_ scrollView: UIScrollView) {
+        print("check \(scrollView.contentOffset.y)")
+        if heightView.constant > 250{
+            heightView.constant +=  tableView.rowHeight
+        }
+        if heightView.constant < 299 && scrollView.contentOffset.y < 0 {
+            heightView.constant +=  -(tableView.rowHeight)
+
+        }
+        // -97 ...20
+        // 20 ..
+        
+//        heightView.constant = scrollView.contentInset.top
+//        offsetY = -(scrollView.contentOffset.y + scrollView.contentInset.top)
+        //heightView.constant = offsetY >= 0 ? 0 : -offsetY / 2
+        //heightView.constant = max(offsetY + scrollView.contentInset.top, scrollView.contentInset.top)
+        
+        
+        
+//        while self.heightView.constant <= 100{
+//            self.heightView.constant += tableView.rowHeight
+//        }
+        
+//        if scrollView.contentOffset.y <= 45{
+//            self.heightView.constant += tableView.rowHeight
+//        } else {return}
+//        repeat {
+//            self.heightView.constant += tableView.rowHeight
+//        } while self.heightView.constant == cons
+        
+   
 //            if (scrollView.contentOffset.y > self.offsetY) {
 //                self.tableView.tableHeaderView = nil
 //            } else {

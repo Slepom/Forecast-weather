@@ -11,6 +11,12 @@ class SecondScreenViewController: UIViewController {
 
     @IBOutlet weak var heightView: NSLayoutConstraint!
     
+    var cityNameLabel: UILabel = {
+        let lab = UILabel()
+        
+        return lab
+    }()
+    
     @IBOutlet weak var viewHeader: UIView!
     var offsetY: CGFloat! = 200.0
     var header = UIView()
@@ -24,7 +30,7 @@ class SecondScreenViewController: UIViewController {
                 }
     }
     
-    let data = [["apples", "oranges", "grape"], ["fruit", "kivi"],["tomato"], ["fruit", "kivi"],["tomato"], ["fruit", "kivi"],["tomato"], ["fruit", "kivi"],["tomato"], ["fruit", "kivi"],["tomato"], ["apples", "oranges", "grape"], ["fruit", "kivi"],["tomato"], ["fruit", "kivi"],["tomato"], ["fruit", "kivi"],["tomato"], ["fruit", "kivi"],["tomato"], ["fruit", "kivi"],["tomato"]]
+    let data = [["1", "2", "3"], ["fruit", "kivi"],["tomato"], ["fruit", "kivi"],["tomato"], ["fruit", "kivi"],["tomato"], ["fruit", "kivi"],["tomato"], ["fruit", "kivi"],["tomato"], ["apples", "oranges", "grape"], ["fruit", "kivi"],["tomato"], ["fruit", "kivi"],["tomato"], ["fruit", "kivi"],["tomato"], ["fruit", "kivi"],["tomato"], ["fruit", "kivi"],["tomato"]]
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -69,51 +75,18 @@ extension SecondScreenViewController: UITableViewDelegate{
         
     }
     func scrollViewDidScroll(_ scrollView: UIScrollView) {
-        print("check \(scrollView.contentOffset.y)")
-        if heightView.constant > 250{
-            heightView.constant +=  tableView.rowHeight
-        }
-        if heightView.constant < 299 && scrollView.contentOffset.y < 0 {
-            heightView.constant +=  -(tableView.rowHeight)
+       // print("check \(scrollView.contentOffset.y)")
+
+        if scrollView.contentOffset.y > -59 && heightView.constant > 250{
+            heightView.constant +=  (tableView.rowHeight - 2)
 
         }
-        // -97 ...20
-        // 20 ..
-        
-//        heightView.constant = scrollView.contentInset.top
-//        offsetY = -(scrollView.contentOffset.y + scrollView.contentInset.top)
-        //heightView.constant = offsetY >= 0 ? 0 : -offsetY / 2
-        //heightView.constant = max(offsetY + scrollView.contentInset.top, scrollView.contentInset.top)
-        
-        
-        
-//        while self.heightView.constant <= 100{
-//            self.heightView.constant += tableView.rowHeight
-//        }
-        
-//        if scrollView.contentOffset.y <= 45{
-//            self.heightView.constant += tableView.rowHeight
-//        } else {return}
-//        repeat {
-//            self.heightView.constant += tableView.rowHeight
-//        } while self.heightView.constant == cons
-        
-   
-//            if (scrollView.contentOffset.y > self.offsetY) {
-//                self.tableView.tableHeaderView = nil
-//            } else {
-//                self.tableView.tableHeaderView = self.header
-//            }
-//            self.offsetY = scrollView.contentOffset.y
+        if scrollView.contentOffset.y < 12 && heightView.constant < 400{
+            heightView.constant -=  (tableView.rowHeight - 2)
         }
-//        if scrollView.contentOffset.y < 0{
-//                    self.header.frame.origin.y = scrollView.contentOffset.y
-//                    self.header.frame.size.height -= scrollView.contentOffset.y
-//                }else{
-//                    self.header.frame.size.height =   self.header.frame.size.height -  scrollView.contentOffset.y
-//                    print(self.header.frame.size.height)
-//                }
-        
+
+        }
+
     }
     func tableView(_ tableView: UITableView, estimatedHeightForHeaderInSection section: Int) -> CGFloat {
         return 80

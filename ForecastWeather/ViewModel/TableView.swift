@@ -13,13 +13,9 @@ class TableView: UITableView {
     override func layoutSubviews() {
         super.layoutSubviews()
         
-//        guard let header = tableHeaderView else {return}
-//        
-//        let offsetY = -contentOffset.y
-//        header.frame = CGRect(x: 0, y: 0, width: , height: <#T##CGFloat#>)
-//        
-//       // header.bounds.height = header.bounds.maxY  - offsetY
-//        print(offsetY)
+        guard let header = tableHeaderView else {return}
+        let offsetY = -contentOffset.y
+        header.clipsToBounds = offsetY <= 0
     }
     
 }

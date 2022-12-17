@@ -84,7 +84,7 @@ class NetworkManager{
         
     }
     
-    
+    //api.openweathermap.org/data/2.5/forecast?lat=44.34&lon=10.99&appid=78e7f9f338c58758934eb23fad97fb9c&units=metric
     
     
     

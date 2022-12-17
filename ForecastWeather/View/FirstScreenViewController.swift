@@ -144,17 +144,27 @@ extension FirstScreenViewController: UICollectionViewDataSource, UICollectionVie
     }
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-//        var weather: CurrentWeatherModel!
-//        switch self.search.isActive{
-//        case true: weather = self.arraySearch[indexPath.row]
-//        case false: weather = self.arrayWeather[indexPath.row]
-//        }
-//
-//        //let vc = SecondScreenViewController()
-//        //self.navigationController?.pushViewController(vc, animated: true)
+        var weather: CurrentWeatherModel!
+        switch self.search.isActive{
+        case true: weather = self.arraySearch[indexPath.row]
+        case false: weather = self.arrayWeather[indexPath.row]
+        }
+
+//        let vc = SecondScreenViewController()
+//        self.navigationController?.pushViewController(vc, animated: true)
+//        vc.configureMainView(cityCurrentWeather: weather)
+//        vc.modalPresentationStyle = .fullScreen
+        let storyBoard: UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
+        let newViewController = storyBoard.instantiateViewController(withIdentifier: "SecondScreenViewController") as! SecondScreenViewController
+        self.navigationController?.pushViewController(newViewController, animated: true)
+
+//                self.present(newViewController, animated: false, completion: nil)
+        //newViewController.configureMainView(cityCurrentWeather: weather)
+        newViewController.modalPresentationStyle = .fullScreen
 //        let storyboard = UIStoryboard(name: "Main", bundle: nil)
 //        let vc = storyboard.instantiateViewController(identifier: "secondNav")
-//        self.navigationController?.pushViewController(vc, animated: true)
+//        self.view.window?.rootViewController = vc
+//        self.view.window?.window?.makeKeyAndVisible()
         
     }
 

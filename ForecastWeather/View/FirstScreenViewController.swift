@@ -55,6 +55,11 @@ class FirstScreenViewController: UIViewController {
         search.obscuresBackgroundDuringPresentation = false
         setupCollectionView()
     }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        
+        }
 
     private func createCompositionalLayout() -> UICollectionViewLayout {
         let itemSize = NSCollectionLayoutSize(
@@ -150,19 +155,24 @@ extension FirstScreenViewController: UICollectionViewDataSource, UICollectionVie
         case false: weather = self.arrayWeather[indexPath.row]
         }
 
-//        let vc = SecondScreenViewController()
-//        self.navigationController?.pushViewController(vc, animated: true)
-//        vc.configureMainView(cityCurrentWeather: weather)
-//        vc.modalPresentationStyle = .fullScreen
-        let storyBoard: UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
-        let newViewController = storyBoard.instantiateViewController(withIdentifier: "SecondScreenViewController") as! SecondScreenViewController
-        self.navigationController?.pushViewController(newViewController, animated: true)
+        //let vc = SecondScreenViewController()
+        let vc = storyboard?.instantiateViewController(withIdentifier: "SecondScreenViewController") as? SecondScreenViewController
+        self.navigationController?.pushViewController(vc!, animated: true)
+      //  vc.configureMainView(cityCurrentWeather: weather)
+        vc!.modalPresentationStyle = .fullScreen
+      //  let storyBoard: UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
+//        let newViewController = storyBoard?.instantiateViewController(withIdentifier: "c") as! SecondScreenViewController
+//        self.navigationController?.pushViewController(newViewController, animated: true)
+//        newViewController.configureMainView(cityCurrentWeather: weather)
 
+//        let vc = storyboard?.instantiateViewController(withIdentifier: "SecondScreenViewController") as? SecondScreenViewController
+//        navigationController?.pushViewController(vc!, animated: false)
+        
 //                self.present(newViewController, animated: false, completion: nil)
         //newViewController.configureMainView(cityCurrentWeather: weather)
-        newViewController.modalPresentationStyle = .fullScreen
+        //newViewController.modalPresentationStyle = .fullScreen
 //        let storyboard = UIStoryboard(name: "Main", bundle: nil)
-//        let vc = storyboard.instantiateViewController(identifier: "secondNav")
+//        let vc = storyboard.instantiateViewController(identifier: "navSecondView")
 //        self.view.window?.rootViewController = vc
 //        self.view.window?.window?.makeKeyAndVisible()
         

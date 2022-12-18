@@ -48,22 +48,20 @@ class SecondScreenViewController: UIViewController, UINavigationBarDelegate {
     @IBOutlet weak var viewHeader: UIView!
     
     
-    @IBOutlet weak var tableView: UITableView!
-    //        didSet {
-    //                    tableView.dataSource = self
-    //                    tableView.delegate = self
-    //                }
-    //    }
+    @IBOutlet weak var tableView: UITableView!{
+            didSet {
+                        tableView.dataSource = self
+                        tableView.delegate = self
+                    }
+    }
     
     let data = [["1", "2", "3"], ["4", "5"],["6"], ["7", "8"],["9"], ["10", "11"],["12"], ["13", "14"],["15"], ["16", "17"],["18"], ["19", "20", "21"], ["fruit", "kivi"],["tomato"], ["fruit", "kivi"],["tomato"], ["fruit", "kivi"],["tomato"], ["fruit", "kivi"],["tomato"], ["fruit", "kivi"],["tomato"]]
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        tableView.dataSource = self
-        tableView.delegate = self
-        navigationController?.navigationBar.delegate = self
-        
-        
+                
+        //self.navigationController?.isNavigationBarHidden = true
+
         
         
         //        //let footer = UIView(frame: CGRect(x: 0, y: 0, width: view.frame.size.width, height: 300))
@@ -77,8 +75,11 @@ class SecondScreenViewController: UIViewController, UINavigationBarDelegate {
         //        header = UIView(frame: CGRect(x: 0, y: 0, width: view.frame.size.width, height: 300))
         //        header.backgroundColor = .orange
         //        tableView.tableHeaderView = header
-        
-        
+       // navigationController?.hidesBarsOnSwipe = true
+        navigationController?.navigationBar.setBackgroundImage(UIImage(), for: .default)
+        navigationController?.navigationBar.shadowImage = UIImage()
+        navigationController?.navigationBar.tintColor = .white
+        tableView.contentInsetAdjustmentBehavior = .never
     }
     
     override func viewWillLayoutSubviews() {
@@ -88,12 +89,8 @@ class SecondScreenViewController: UIViewController, UINavigationBarDelegate {
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        self.navigationController?.navigationBar.isTranslucent = true
-        self.navigationController?.navigationBar.tintColor = .white
         
-        self.navigationItem.backBarButtonItem = UIBarButtonItem(title: "", style: .plain, target: nil, action: nil)
-        self.title = ""
-        self.navigationController?.setNavigationBarHidden(true, animated: false)
+
         
     }
     

@@ -11,29 +11,17 @@ class SecondScreenViewController: UIViewController, UINavigationBarDelegate {
     
     @IBOutlet weak var heightView: NSLayoutConstraint!
     
-    //    private let titleLabel: UILabel = {
-    //        let label = UILabel()
-    //        label.translatesAutoresizingMaskIntoConstraints = false
-    //        label.numberOfLines = 0
-    //        label.textAlignment = .left
-    //        label.textColor = .white
-    //        label.text = "CityName"
-    //        label.textAlignment = .center
-    //        label.font = UIFont.systemFont(ofSize: 24, weight: .regular)
-    //        return label
-    //    }()
-    //    private let temperatureLabel: UILabel = {
-    //        let label = UILabel()
-    //        label.translatesAutoresizingMaskIntoConstraints = false
-    //        label.numberOfLines = 0
-    //        label.textAlignment = .left
-    //        label.textColor = .white
-    //        label.text = "Temp"
-    //        label.textAlignment = .center
-    //        label.font = UIFont.systemFont(ofSize: 36, weight: .regular)
-    //        return label
-    //    }()
+    @IBOutlet weak var collectionView: UICollectionView!{
+        didSet{
+           collectionView.dataSource = self
+           collectionView.delegate = self
+        }
+    }
     
+    var weatherViewModel = WeatherCurrentCityViewModel()
+
+    var currentWeather: CurrentWeatherModel!
+    lazy var descriptionWeatherArray: [ListHourly] = []
     
     @IBOutlet weak var cityLabel: UILabel!
     
@@ -59,27 +47,26 @@ class SecondScreenViewController: UIViewController, UINavigationBarDelegate {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-                
-        //self.navigationController?.isNavigationBarHidden = true
+//        let appearance = UINavigationBarAppearance()
+//            appearance.configureWithTransparentBackground()
+//            navigationController?.navigationBar.standardAppearance = appearance
+        
+        
+        weatherViewModel.weatherByCoordinate(city: currentWeather.name ) { [weak self] arrayHourlyModel in
+            guard let self = self, let arrayModel = arrayHourlyModel else {return}
+           
+            DispatchQueue.main.async {
+                self.descriptionWeatherArray = arrayModel
+                self.collectionView.reloadData()
+            }
+        }
+        
+        
 
         
         
-        //        //let footer = UIView(frame: CGRect(x: 0, y: 0, width: view.frame.size.width, height: 300))
-        
-        //        //footer.backgroundColor = .green
-        
-        //tableView.tableFooterView = footer
-        //        tableView.rowHeight = UITableView.automaticDimension
-        //        tableView.sectionHeaderHeight = UITableView.automaticDimension
-        //        //header.rowHeight = UITableView.automaticDimension
-        //        header = UIView(frame: CGRect(x: 0, y: 0, width: view.frame.size.width, height: 300))
-        //        header.backgroundColor = .orange
-        //        tableView.tableHeaderView = header
-       // navigationController?.hidesBarsOnSwipe = true
-        navigationController?.navigationBar.setBackgroundImage(UIImage(), for: .default)
-        navigationController?.navigationBar.shadowImage = UIImage()
-        navigationController?.navigationBar.tintColor = .white
-        tableView.contentInsetAdjustmentBehavior = .never
+        collectionView.register(HourlyCollectionViewCell.self, forCellWithReuseIdentifier: HourlyCollectionViewCell.reuseId)
+        configureMainView(cityCurrentWeather: self.currentWeather)
     }
     
     override func viewWillLayoutSubviews() {
@@ -89,11 +76,13 @@ class SecondScreenViewController: UIViewController, UINavigationBarDelegate {
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
+//        UINavigationBar.appearance().setBackgroundImage(UIImage(), for: .default)
+//        UINavigationBar.appearance().shadowImage = UIImage()
+//        UINavigationBar.appearance().isTranslucent = true
         
-
         
     }
-    
+   
     //    private func setupConstrain(){
     //        viewHeader.addSubview(titleLabel)
     //        viewHeader.addSubview(temperatureLabel)
@@ -116,11 +105,11 @@ class SecondScreenViewController: UIViewController, UINavigationBarDelegate {
     
     func configureMainView(cityCurrentWeather: CurrentWeatherModel){
         self.cityLabel.text = cityCurrentWeather.name
-        self.descriptionLabel.text = cityCurrentWeather.weather?.description
+        self.descriptionLabel.text = cityCurrentWeather.weather?.first?.weatherDescription
         guard let temperature = cityCurrentWeather.main else {return}
-        self.tempLabel.text = String(temperature.temp)
-        self.maxTempLabel.text = String(temperature.tempMax)
-        self.minTempLabel.text = String(temperature.tempMin)
+        self.tempLabel.text = String(Int(temperature.temp))
+        self.maxTempLabel.text = String(Int(temperature.tempMax))
+        self.minTempLabel.text = String(Int(temperature.tempMin))
         
         
     }
@@ -205,4 +194,21 @@ extension SecondScreenViewController: UITableViewDataSource{
     //        func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
     //            return 0.0
     //        }
+}
+
+extension SecondScreenViewController: UICollectionViewDataSource, UICollectionViewDelegate{
+    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        self.descriptionWeatherArray.count
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: HourlyCollectionViewCell.reuseId, for: indexPath) as? HourlyCollectionViewCell else {return UICollectionViewCell()}
+        let weather = self.descriptionWeatherArray[indexPath.row]
+        cell.configure(with: weather)
+        return cell
+    }
+    
+    
+    
+    
 }

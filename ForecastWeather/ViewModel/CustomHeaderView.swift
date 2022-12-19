@@ -1,9 +1,4 @@
-//
-//  CustomHeaderView.swift
-//  ForecastWeather
-//
-//  Created by Полина Жарова on 12.12.22.
-//
+
 
 import UIKit
 

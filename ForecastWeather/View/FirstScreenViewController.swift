@@ -54,6 +54,12 @@ class FirstScreenViewController: UIViewController {
         search.searchResultsUpdater = self
         search.obscuresBackgroundDuringPresentation = false
         setupCollectionView()
+        
+        
+        
+        
+        
+        
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -155,11 +161,21 @@ extension FirstScreenViewController: UICollectionViewDataSource, UICollectionVie
         case false: weather = self.arrayWeather[indexPath.row]
         }
 
-        //let vc = SecondScreenViewController()
-        let vc = storyboard?.instantiateViewController(withIdentifier: "SecondScreenViewController") as? SecondScreenViewController
-        self.navigationController?.pushViewController(vc!, animated: true)
-      //  vc.configureMainView(cityCurrentWeather: weather)
-        vc!.modalPresentationStyle = .fullScreen
+        let storyboard = UIStoryboard(name: "Main", bundle: Bundle.main)
+
+        let vc = storyboard.instantiateViewController(identifier: "SecondScreenViewController") as! SecondScreenViewController
+        self.navigationController?.pushViewController(vc, animated: true)
+       
+        vc.currentWeather = weather
+        
+        
+//        let vc = storyboard?.instantiateViewController(withIdentifier: "SecondScreenViewController") as? SecondScreenViewController
+//        self.navigationController?.pushViewController(vc!, animated: true)
+//        vc!.configureMainView(cityCurrentWeather: weather)
+//        vc!.modalPresentationStyle = .fullScreen
+        
+        
+        
       //  let storyBoard: UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
 //        let newViewController = storyBoard?.instantiateViewController(withIdentifier: "c") as! SecondScreenViewController
 //        self.navigationController?.pushViewController(newViewController, animated: true)

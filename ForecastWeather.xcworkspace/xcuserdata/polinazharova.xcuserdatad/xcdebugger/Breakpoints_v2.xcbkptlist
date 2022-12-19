@@ -345,8 +345,8 @@
             filePath = "ForecastWeather/View/SecondScreenViewController.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "183"
-            endingLineNumber = "183"
+            startingLineNumber = "172"
+            endingLineNumber = "172"
             landmarkName = "numberOfSections(in:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -361,8 +361,8 @@
             filePath = "ForecastWeather/View/SecondScreenViewController.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "191"
-            endingLineNumber = "191"
+            startingLineNumber = "180"
+            endingLineNumber = "180"
             landmarkName = "tableView(_:cellForRowAt:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -377,9 +377,200 @@
             filePath = "ForecastWeather/View/SecondScreenViewController.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "193"
-            endingLineNumber = "193"
+            startingLineNumber = "182"
+            endingLineNumber = "182"
             landmarkName = "tableView(_:cellForRowAt:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "7AE9BDBA-DDD8-43B3-80B3-4C318E6A1B59"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "ForecastWeather/View/SecondScreenViewController.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "106"
+            endingLineNumber = "106"
+            landmarkName = "configureMainView(cityCurrentWeather:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "24716661-D348-49B9-BB00-61BBDC32047E"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "ForecastWeather/View/SecondScreenViewController.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "56"
+            endingLineNumber = "56"
+            landmarkName = "viewDidLoad()"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "24716661-D348-49B9-BB00-61BBDC32047E - 5dbd5a51f096dd2a"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 (Swift.Optional&lt;Swift.Array&lt;ForecastWeather.ListHourly&gt;&gt;) -&gt; () in ForecastWeather.SecondScreenViewController.viewDidLoad() -&gt; ()"
+                  moduleName = "ForecastWeather"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/polinazharova/Forecast-weather/ForecastWeather/View/SecondScreenViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "56"
+                  endingLineNumber = "56"
+                  offsetFromSymbolStart = "218">
+               </Location>
+               <Location
+                  uuid = "24716661-D348-49B9-BB00-61BBDC32047E - 5dbd5a51f096dd2a"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 (Swift.Optional&lt;Swift.Array&lt;ForecastWeather.ListHourly&gt;&gt;) -&gt; () in ForecastWeather.SecondScreenViewController.viewDidLoad() -&gt; ()"
+                  moduleName = "ForecastWeather"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/polinazharova/Forecast-weather/ForecastWeather/View/SecondScreenViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "56"
+                  endingLineNumber = "56"
+                  offsetFromSymbolStart = "281">
+               </Location>
+               <Location
+                  uuid = "24716661-D348-49B9-BB00-61BBDC32047E - 5dbd5a51f096dd2a"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 (Swift.Optional&lt;Swift.Array&lt;ForecastWeather.ListHourly&gt;&gt;) -&gt; () in ForecastWeather.SecondScreenViewController.viewDidLoad() -&gt; ()"
+                  moduleName = "ForecastWeather"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/polinazharova/Forecast-weather/ForecastWeather/View/SecondScreenViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "56"
+                  endingLineNumber = "56"
+                  offsetFromSymbolStart = "352">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "FD349731-7A70-4715-9D3B-0A2DC1DCFA7D"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "ForecastWeather/View/SecondScreenViewController.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "55"
+            endingLineNumber = "55"
+            landmarkName = "viewDidLoad()"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "FD349731-7A70-4715-9D3B-0A2DC1DCFA7D - a8b551b10b1b2ae"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "ForecastWeather.SecondScreenViewController.viewDidLoad() -&gt; ()"
+                  moduleName = "ForecastWeather"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/polinazharova/Forecast-weather/ForecastWeather/View/SecondScreenViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "55"
+                  endingLineNumber = "55"
+                  offsetFromSymbolStart = "134">
+               </Location>
+               <Location
+                  uuid = "FD349731-7A70-4715-9D3B-0A2DC1DCFA7D - 5dbd5a51f096dd09"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 (Swift.Optional&lt;Swift.Array&lt;ForecastWeather.ListHourly&gt;&gt;) -&gt; () in ForecastWeather.SecondScreenViewController.viewDidLoad() -&gt; ()"
+                  moduleName = "ForecastWeather"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/polinazharova/Forecast-weather/ForecastWeather/View/SecondScreenViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "55"
+                  endingLineNumber = "55"
+                  offsetFromSymbolStart = "206">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "C8AC96D4-340A-4FD6-9C5E-AD3D1C2B073D"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "ForecastWeather/View/SecondScreenViewController.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "57"
+            endingLineNumber = "57"
+            landmarkName = "viewDidLoad()"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "C8AC96D4-340A-4FD6-9C5E-AD3D1C2B073D - 5dbd5a51f096dd74"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 (Swift.Optional&lt;Swift.Array&lt;ForecastWeather.ListHourly&gt;&gt;) -&gt; () in ForecastWeather.SecondScreenViewController.viewDidLoad() -&gt; ()"
+                  moduleName = "ForecastWeather"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/polinazharova/Forecast-weather/ForecastWeather/View/SecondScreenViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "58"
+                  endingLineNumber = "58"
+                  offsetFromSymbolStart = "381">
+               </Location>
+               <Location
+                  uuid = "C8AC96D4-340A-4FD6-9C5E-AD3D1C2B073D - 23c01a66b8d217c8"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 @Swift.MainActor () -&gt; () in closure #1 (Swift.Optional&lt;Swift.Array&lt;ForecastWeather.ListHourly&gt;&gt;) -&gt; () in ForecastWeather.SecondScreenViewController.viewDidLoad() -&gt; ()"
+                  moduleName = "ForecastWeather"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/polinazharova/Forecast-weather/ForecastWeather/View/SecondScreenViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "59"
+                  endingLineNumber = "59"
+                  offsetFromSymbolStart = "65">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "637490D4-9EFF-4D38-AA6B-9BF6A562FE00"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "ForecastWeather/View/SecondScreenViewController.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "201"
+            endingLineNumber = "201"
+            landmarkName = "collectionView(_:numberOfItemsInSection:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>

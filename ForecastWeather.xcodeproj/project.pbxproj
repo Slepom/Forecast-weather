@@ -11,6 +11,8 @@
 		D8138AD52944CB05001EAC2A /* SecondScreenViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8138AD42944CB05001EAC2A /* SecondScreenViewController.swift */; };
 		D8138AD729460612001EAC2A /* TableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8138AD629460612001EAC2A /* TableView.swift */; };
 		D83D9596294E327500CBAD07 /* HourlyModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D83D9595294E327500CBAD07 /* HourlyModel.swift */; };
+		D89D68DB2950E24D002B458B /* WeatherCurrentCityViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D89D68DA2950E24D002B458B /* WeatherCurrentCityViewModel.swift */; };
+		D89D68DD2950E49F002B458B /* HourlyCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D89D68DC2950E49F002B458B /* HourlyCollectionViewCell.swift */; };
 		D8A0964E29478F2800DACD90 /* CustomHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8A0964D29478F2800DACD90 /* CustomHeaderView.swift */; };
 		D8CE0E29294204F90015CD3E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8CE0E28294204F90015CD3E /* AppDelegate.swift */; };
 		D8CE0E2B294204F90015CD3E /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8CE0E2A294204F90015CD3E /* SceneDelegate.swift */; };
@@ -33,6 +35,8 @@
 		D8138AD42944CB05001EAC2A /* SecondScreenViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecondScreenViewController.swift; sourceTree = "<group>"; };
 		D8138AD629460612001EAC2A /* TableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableView.swift; sourceTree = "<group>"; };
 		D83D9595294E327500CBAD07 /* HourlyModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HourlyModel.swift; sourceTree = "<group>"; };
+		D89D68DA2950E24D002B458B /* WeatherCurrentCityViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherCurrentCityViewModel.swift; sourceTree = "<group>"; };
+		D89D68DC2950E49F002B458B /* HourlyCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HourlyCollectionViewCell.swift; sourceTree = "<group>"; };
 		D8A0964D29478F2800DACD90 /* CustomHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomHeaderView.swift; sourceTree = "<group>"; };
 		D8CE0E25294204F90015CD3E /* ForecastWeather.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ForecastWeather.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D8CE0E28294204F90015CD3E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -130,10 +134,12 @@
 			isa = PBXGroup;
 			children = (
 				D8CE0E48294208D20015CD3E /* SearchViewModel.swift */,
+				D89D68DA2950E24D002B458B /* WeatherCurrentCityViewModel.swift */,
 				D8CE0E4A294225D20015CD3E /* FirstScreenViewModel.swift */,
-				D8CE0E4C294239720015CD3E /* SearchCollectionViewCell.swift */,
 				D8138AD629460612001EAC2A /* TableView.swift */,
 				D8A0964D29478F2800DACD90 /* CustomHeaderView.swift */,
+				D8CE0E4C294239720015CD3E /* SearchCollectionViewCell.swift */,
+				D89D68DC2950E49F002B458B /* HourlyCollectionViewCell.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -278,6 +284,7 @@
 				D8CE0E2D294204F90015CD3E /* FirstScreenViewController.swift in Sources */,
 				D8CE0E422942065F0015CD3E /* CoordinateModel.swift in Sources */,
 				D8A0964E29478F2800DACD90 /* CustomHeaderView.swift in Sources */,
+				D89D68DB2950E24D002B458B /* WeatherCurrentCityViewModel.swift in Sources */,
 				D8CE0E4B294225D20015CD3E /* FirstScreenViewModel.swift in Sources */,
 				D8CE0E44294206A50015CD3E /* CurrentWeatherModel.swift in Sources */,
 				D8138AD52944CB05001EAC2A /* SecondScreenViewController.swift in Sources */,
@@ -285,6 +292,7 @@
 				D8CE0E2B294204F90015CD3E /* SceneDelegate.swift in Sources */,
 				D8138AD729460612001EAC2A /* TableView.swift in Sources */,
 				D8CE0E4D294239720015CD3E /* SearchCollectionViewCell.swift in Sources */,
+				D89D68DD2950E49F002B458B /* HourlyCollectionViewCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

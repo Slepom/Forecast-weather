@@ -203,9 +203,12 @@ extension SecondScreenViewController: UICollectionViewDataSource, UICollectionVi
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: HourlyCollectionViewCell.reuseId, for: indexPath) as? HourlyCollectionViewCell else {return UICollectionViewCell()}
+        
+   
         let weather = self.descriptionWeatherArray[indexPath.row]
-        cell.configure(with: weather)
-        return cell
+            cell.configure(with: weather)
+            return cell
+    
     }
     
     

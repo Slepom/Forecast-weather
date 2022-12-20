@@ -18,9 +18,7 @@ class FirstScreenViewModel{
                 guard self != nil else {return}
                 arrayForComplition.append(currentWeather)
                 complition(arrayForComplition)
-                
             }
-            
         }
     }
     

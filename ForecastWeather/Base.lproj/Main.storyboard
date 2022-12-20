@@ -155,7 +155,7 @@
                         <outlet property="cityLabel" destination="pf2-3b-YZr" id="bjg-Og-xH5"/>
                         <outlet property="collectionView" destination="OXP-ic-S3g" id="ckL-sF-ZZU"/>
                         <outlet property="descriptionLabel" destination="uig-8f-jhs" id="qcp-WD-ns1"/>
-                        <outlet property="heightView" destination="QU9-n3-cWg" id="qwc-0k-axc"/>
+                        <outlet property="heightView" destination="QU9-n3-cWg" id="l8g-Pr-YCA"/>
                         <outlet property="maxTempLabel" destination="pL7-lh-BWF" id="LeL-4R-1i2"/>
                         <outlet property="minTempLabel" destination="5pV-WE-F2r" id="L9h-pc-aCz"/>
                         <outlet property="tableView" destination="kxP-3T-NlC" id="i10-yB-87d"/>
@@ -165,7 +165,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="NKt-3c-RhY" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3000.7633587786258" y="3.5211267605633805"/>
+            <point key="canvasLocation" x="1978" y="4"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="KKt-xm-icd">

@@ -62,10 +62,11 @@ class FirstScreenViewController: UIViewController {
         
     }
     
+    
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         
-        }
+    }
 
     private func createCompositionalLayout() -> UICollectionViewLayout {
         let itemSize = NSCollectionLayoutSize(
@@ -163,7 +164,7 @@ extension FirstScreenViewController: UICollectionViewDataSource, UICollectionVie
 
         let storyboard = UIStoryboard(name: "Main", bundle: Bundle.main)
 
-        let vc = storyboard.instantiateViewController(identifier: "SecondScreenViewController") as! SecondScreenViewController
+        let vc = storyboard.instantiateViewController(identifier: "NewViewController") as! NewViewController
         self.navigationController?.pushViewController(vc, animated: true)
        
         vc.currentWeather = weather

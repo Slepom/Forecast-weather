@@ -27,6 +27,7 @@
 		D8CE0E49294208D20015CD3E /* SearchViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8CE0E48294208D20015CD3E /* SearchViewModel.swift */; };
 		D8CE0E4B294225D20015CD3E /* FirstScreenViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8CE0E4A294225D20015CD3E /* FirstScreenViewModel.swift */; };
 		D8CE0E4D294239720015CD3E /* SearchCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8CE0E4C294239720015CD3E /* SearchCollectionViewCell.swift */; };
+		D8FEE60129537611007E478D /* NewViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8FEE60029537611007E478D /* NewViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -53,6 +54,7 @@
 		D8CE0E48294208D20015CD3E /* SearchViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewModel.swift; sourceTree = "<group>"; };
 		D8CE0E4A294225D20015CD3E /* FirstScreenViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirstScreenViewModel.swift; sourceTree = "<group>"; };
 		D8CE0E4C294239720015CD3E /* SearchCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchCollectionViewCell.swift; sourceTree = "<group>"; };
+		D8FEE60029537611007E478D /* NewViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewViewController.swift; sourceTree = "<group>"; };
 		E7A71A8BB319D4F3840D7279 /* Pods_ForecastWeather.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ForecastWeather.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -126,6 +128,7 @@
 			children = (
 				D8CE0E2C294204F90015CD3E /* FirstScreenViewController.swift */,
 				D8138AD42944CB05001EAC2A /* SecondScreenViewController.swift */,
+				D8FEE60029537611007E478D /* NewViewController.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -289,6 +292,7 @@
 				D8CE0E44294206A50015CD3E /* CurrentWeatherModel.swift in Sources */,
 				D8138AD52944CB05001EAC2A /* SecondScreenViewController.swift in Sources */,
 				D8CE0E29294204F90015CD3E /* AppDelegate.swift in Sources */,
+				D8FEE60129537611007E478D /* NewViewController.swift in Sources */,
 				D8CE0E2B294204F90015CD3E /* SceneDelegate.swift in Sources */,
 				D8138AD729460612001EAC2A /* TableView.swift in Sources */,
 				D8CE0E4D294239720015CD3E /* SearchCollectionViewCell.swift in Sources */,
